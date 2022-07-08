@@ -4,7 +4,7 @@
 // The following code is meant for desktop interations with
 // swmm .inp files. For demonstration purposes only.
 /////////////////////////////////////////////////////////
-
+ 
 /////////////////////////////////
 // Basic model updates
 // 
@@ -234,7 +234,7 @@ function parseInput(text) {
           Decay: parseFloat(m[3]), 
           DryTime: parseFloat(m[4]), 
           MaxInfil: parseFloat(m[5])
-        };
+        }
       if (m && m.length == 3 && (
         model.OPTIONS.INFILTRATION == 'GREEN-AMPT' ||
         model.OPTIONS.INFILTRATION == 'MODIFIED')){
@@ -3290,7 +3290,7 @@ function geoJSON_Points(model){
     features : []
   }
 
-  // Add each polygon to the features array in the geoJ object.
+  // Add each point to the features array in the geoJ object.
   for(let entry in model['COORDINATES']){
     var rec = model['COORDINATES'][entry]
     polyObj = {
@@ -3460,8 +3460,6 @@ function traceUpstreamLinks(model, id){
   }
 
   getUsLink(id)
-
-  console.log(trace)
 
   return trace
 }
